@@ -11,6 +11,7 @@ function BooksList({ books }: Props) {
         <tr key={book.id}>
           <td>{book.volumeInfo.title}</td>
           <td>{book.volumeInfo.authors}</td>
+          <td>{book.kind}</td>
         </tr>
       ))}
     </tbody>

@@ -15,6 +15,7 @@ function Home() {
             <tr>
               <th>Title</th>
               <th>Authors</th>
+              <th>Kind</th>
             </tr>
           </thead>
           <BooksList books={data.items} />
