@@ -2,7 +2,7 @@ import { useBooksQuery } from '../../services/ApiService';
 import BooksList from './components/BooksList';
 
 function Home() {
-  const { data, error, isLoading, isSuccess } = useBooksQuery('react');
+  const { data, error, isLoading, isSuccess } = useBooksQuery('harry potter');
   console.log(data);
   return (
     <main>
