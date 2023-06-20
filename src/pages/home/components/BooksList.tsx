@@ -10,7 +10,7 @@ function BooksList({ books }: Props) {
       {books.map((book) => (
         <tr key={book.id}>
           <td>{book.volumeInfo.title}</td>
-          <td>{book.volumeInfo.authors}</td>
+          <td>{book.volumeInfo.authors.join(', ')}</td>
           <td>{book.kind}</td>
         </tr>
       ))}
