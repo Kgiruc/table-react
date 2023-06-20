@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 import { booksApi } from '../services/ApiService';
-import detailsReducer from './features/bookSlice';
+import detailsReducer from './features/detailsSlice';
 
 export const store = configureStore({
   reducer: {
