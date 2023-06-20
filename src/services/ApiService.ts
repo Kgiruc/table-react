@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Book } from '../models/book';
+import { BookResponse } from '../models/book';
 
 export const booksApi = createApi({
   reducerPath: 'booksApi',
@@ -8,7 +8,7 @@ export const booksApi = createApi({
   }),
   tagTypes: ['Books'],
   endpoints: (builder) => ({
-    books: builder.query<Book, string>({
+    books: builder.query<BookResponse, string>({
       query: (query) => `volumes?q=${query}&key=${import.meta.env.VITE_KEY}`,
       providesTags: ['Books'],
     }),

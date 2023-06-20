@@ -1,4 +1,5 @@
 import { useBooksQuery } from '../../services/ApiService';
+import BooksList from './components/BooksList';
 
 function Home() {
   const { data, error, isLoading, isSuccess } = useBooksQuery('react');
@@ -8,7 +9,17 @@ function Home() {
       <h1>Books:</h1>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error</p>}
-      {isSuccess && <p>git</p>}
+      {isSuccess && (
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Authors</th>
+            </tr>
+          </thead>
+          <BooksList books={data.items} />
+        </table>
+      )}
     </main>
   );
 }

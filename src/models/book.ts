@@ -1,5 +1,11 @@
 export interface Book {
   id: string;
-  title: string;
-  authors: string[];
+  volumeInfo: {
+    title: string;
+    authors: string[];
+  };
+}
+
+export interface BookResponse {
+  items: Book[];
 }
