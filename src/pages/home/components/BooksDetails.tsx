@@ -9,7 +9,7 @@ function BooksDetails({ id }: BooksDetailsProps) {
   console.log(details.book.volumeInfo);
   return details.isOpen && id === details.book.id ? (
     <ul>
-      {details.book.volumeInfo.imageLinks ? (
+      {details.book.volumeInfo.imageLink ? (
         <img
           src={details.book.volumeInfo.imageLinks.smallThumbnail}
           alt="ksiazka"
