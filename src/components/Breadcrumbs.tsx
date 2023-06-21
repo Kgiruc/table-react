@@ -16,7 +16,12 @@ function Breadcrumbs() {
       );
     });
 
-  return <div>{crumbs}</div>;
+  return (
+    <div>
+      <Link to="/">Home</Link>
+      {crumbs}
+    </div>
+  );
 }
 
 export default Breadcrumbs;
