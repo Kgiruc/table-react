@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../../store/store';
 
 interface BooksDetailsProps {
@@ -9,7 +10,7 @@ function BooksDetails({ id }: BooksDetailsProps) {
   console.log(details.book.volumeInfo);
   return details.isOpen && id === details.book.id ? (
     <ul>
-      {details.book.volumeInfo.imageLink ? (
+      {details.book.volumeInfo.imageLinks ? (
         <img
           src={details.book.volumeInfo.imageLinks.smallThumbnail}
           alt="ksiazka"
@@ -17,6 +18,7 @@ function BooksDetails({ id }: BooksDetailsProps) {
       ) : (
         <p>brak zdjęcia</p>
       )}
+      <Link to={`./${details.book.volumeInfo.authors}`}>More details</Link>
     </ul>
   ) : null;
 }

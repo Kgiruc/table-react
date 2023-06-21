@@ -1,3 +1,4 @@
+import Breadcrumbs from '../../components/Breadcrumbs';
 import { useBooksQuery } from '../../services/ApiService';
 import BooksList from './components/BooksList';
 
@@ -6,6 +7,7 @@ function Home() {
   console.log(data);
   return (
     <main>
+      <Breadcrumbs />
       <h1>Books:</h1>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error</p>}
