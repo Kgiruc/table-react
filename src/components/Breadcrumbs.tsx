@@ -6,11 +6,12 @@ function Breadcrumbs() {
     .split('/')
     .filter((crumb) => crumb !== '')
     .map((crumb, index, array) => {
+      const decodedCrumb = decodeURIComponent(crumb);
       const linkPath = `/${array.slice(0, index + 1).join('/')}`;
 
       return (
         <div key={crumb}>
-          <Link to={linkPath}>{crumb}</Link>
+          <Link to={linkPath}>{decodedCrumb}</Link>
         </div>
       );
     });
