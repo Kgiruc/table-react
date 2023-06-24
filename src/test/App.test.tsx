@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import NotFound from '../pages/NotFound/NotFound';
-import Home from '../pages/Home/Home';
+import Home from '../pages/Books/Books';
 
 describe('App', () => {
   it('Renders hello world', () => {
