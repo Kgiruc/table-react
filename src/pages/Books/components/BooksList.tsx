@@ -1,5 +1,5 @@
 import { Book } from '../../../models/book';
-import { detailsBook } from '../../../store/features/detailsSlice';
+import { openDetails } from '../../../store/features/detailsSlice';
 import { useAppDispatch } from '../../../store/store';
 import BooksDetails from './BooksDetails';
 
@@ -13,7 +13,7 @@ function BooksList({ books, author }: Props) {
   return (
     <tbody>
       {books.map((book) => (
-        <tr key={book.id} onClick={() => dispatch(detailsBook({ book }))}>
+        <tr key={book.id} onClick={() => dispatch(openDetails)}>
           <td>{book.volumeInfo.title}</td>
           <td>{book.volumeInfo.authors}</td>
           <td>{book.kind}</td>

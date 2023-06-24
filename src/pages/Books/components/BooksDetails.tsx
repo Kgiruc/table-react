@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../../store/store';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
+import { detailsBook } from '../../../store/features/detailsSlice';
 
 interface BooksDetailsProps {
   id: string;
@@ -8,20 +9,14 @@ interface BooksDetailsProps {
 
 function BooksDetails({ id, author }: BooksDetailsProps) {
   const details = useAppSelector((state) => state.details);
+  const dispatch = useAppDispatch();
   return details.isOpen && id === details.book.id ? (
-    <ul>
-      {details.book.volumeInfo.imageLinks ? (
-        <img
-          src={details.book.volumeInfo.imageLinks.smallThumbnail}
-          alt="ksiazka"
-        />
-      ) : (
-        <p>brak zdjęcia</p>
-      )}
-      <Link to={author ? './' : `./${details.book.volumeInfo.authors}`}>
-        More details
-      </Link>
-    </ul>
+    <Link
+      to={author ? './' : `./${details.book.volumeInfo.authors}`}
+      onClick={dispatch(detailsBook({ book }))}
+    >
+      More details
+    </Link>
   ) : null;
 }
 

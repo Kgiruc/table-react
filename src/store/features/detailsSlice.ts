@@ -1,26 +1,31 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Details } from '../../models/Details';
 import { Book } from '../../models/book';
 
-const initialState = {
+const initialState: Details = {
   book: {} as Book,
   isOpen: false,
-} as Details;
+};
 
 const detailsSlice = createSlice({
   name: 'details',
   initialState,
   reducers: {
-    detailsBook(state, action: PayloadAction<{ book: Book }>) {
+    detailsBook: (state, action: PayloadAction<{ book: Book }>) => {
       const { book } = action.payload;
       return {
         ...state,
         book,
+      };
+    },
+    openDetails: (state) => {
+      return {
+        ...state,
         isOpen: !state.isOpen,
       };
     },
   },
 });
 
-export const { detailsBook } = detailsSlice.actions;
+export const { detailsBook, openDetails } = detailsSlice.actions;
 export default detailsSlice.reducer;
