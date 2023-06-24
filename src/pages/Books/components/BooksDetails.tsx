@@ -15,7 +15,11 @@ function BooksDetails({ id, author, book }: BooksDetailsProps) {
   return details.isOpen && id === details.bookId ? (
     <Link
       onClick={() => dispatch(detailsBook({ book }))}
-      to={author ? './' : `./${book.volumeInfo.authors}`}
+      to={
+        author
+          ? `../booklist/${book.volumeInfo.authors}`
+          : `./${book.volumeInfo.authors}`
+      }
     >
       More details
     </Link>
