@@ -25,7 +25,7 @@ function Books() {
                 <th>Details</th>
               </tr>
             </thead>
-            <BooksList books={data.items} />
+            <BooksList books={data.items} author={false} />
           </table>
         )}
       </main>

@@ -3,9 +3,10 @@ import { useAppSelector } from '../../../store/store';
 
 interface BooksDetailsProps {
   id: string;
+  author: boolean;
 }
 
-function BooksDetails({ id }: BooksDetailsProps) {
+function BooksDetails({ id, author }: BooksDetailsProps) {
   const details = useAppSelector((state) => state.details);
   return details.isOpen && id === details.book.id ? (
     <ul>
@@ -17,7 +18,9 @@ function BooksDetails({ id }: BooksDetailsProps) {
       ) : (
         <p>brak zdjęcia</p>
       )}
-      <Link to={`./${details.book.volumeInfo.authors}`}>More details</Link>
+      <Link to={author ? './' : `./${details.book.volumeInfo.authors}`}>
+        More details
+      </Link>
     </ul>
   ) : null;
 }

@@ -5,9 +5,10 @@ import BooksDetails from './BooksDetails';
 
 type Props = {
   books: Book[];
+  author: boolean;
 };
 
-function BooksList({ books }: Props) {
+function BooksList({ books, author }: Props) {
   const dispatch = useAppDispatch();
   return (
     <tbody>
@@ -16,7 +17,7 @@ function BooksList({ books }: Props) {
           <td>{book.volumeInfo.title}</td>
           <td>{book.volumeInfo.authors}</td>
           <td>{book.kind}</td>
-          <td>{book.id && <BooksDetails id={book.id} />}</td>
+          <td>{book.id && <BooksDetails id={book.id} author={author} />}</td>
         </tr>
       ))}
     </tbody>
