@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../store/store';
-import { detailsBook } from '../../../store/features/detailsSlice';
-import { Book } from '../../../models/book';
+import { useAppDispatch, useAppSelector } from '../../store/store';
+import { detailsBook } from '../../store/features/detailsSlice';
+import { Book } from '../../models/book';
 
 interface BooksDetailsProps {
   id: string;

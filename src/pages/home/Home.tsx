@@ -1,32 +1,26 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { searchBook } from '../../store/features/searchSlice';
-import { useAppDispatch } from '../../store/store';
+import useHandleSearch from '../../hooks/useHandleSearch';
+import HomeLayout from '../../layouts/HomeLayot';
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-
-  const handleSearch = () => {
-    dispatch(searchBook({ search: searchTerm }));
-    navigate('./booklist');
-  };
+  const handleSearch = useHandleSearch(searchTerm, navigate);
 
   return (
-    <div>
-      <h1>Wyszukaj książkę:</h1>
+    <HomeLayout>
       <input
         type="text"
-        placeholder="min. 3 charakters"
+        placeholder="min. 3 znaki"
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       {searchTerm.length >= 3 && (
         <button type="button" onClick={handleSearch}>
-          Search
+          Szukaj
         </button>
       )}
-    </div>
+    </HomeLayout>
   );
 }
 

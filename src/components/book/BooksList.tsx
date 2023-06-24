@@ -1,6 +1,6 @@
-import { Book } from '../../../models/book';
-import { openDetails } from '../../../store/features/detailsSlice';
-import { useAppDispatch } from '../../../store/store';
+import { Book } from '../../models/book';
+import { openDetails } from '../../store/features/detailsSlice';
+import { useAppDispatch } from '../../store/store';
 import BooksDetails from './BooksDetails';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 function BooksList({ books, author }: Props) {
   const dispatch = useAppDispatch();
   return (
-    <tbody>
+    <>
       {books.map((book) => (
         <tr
           key={book.id}
@@ -33,7 +33,7 @@ function BooksList({ books, author }: Props) {
           </td>
         </tr>
       ))}
-    </tbody>
+    </>
   );
 }
 

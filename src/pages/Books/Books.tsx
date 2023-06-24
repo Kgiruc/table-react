@@ -1,34 +1,31 @@
-import Breadcrumbs from '../../components/Breadcrumbs';
+import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
+import BookListLayout from '../../layouts/BookListLayot';
 import { useBooksQuery } from '../../services/ApiService';
 import { useAppSelector } from '../../store/store';
-import BooksList from './components/BooksList';
+import BooksList from '../../components/book/BooksList';
 
 function Books() {
   const searchBook = useAppSelector((state) => state.search);
   const { data, error, isLoading, isSuccess } = useBooksQuery(
     searchBook.search
   );
+
   return (
     <>
       <Breadcrumbs />
-      <main>
-        <h1>Books:</h1>
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Not found...</p>}
-        {isSuccess && (
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Authors</th>
-                <th>Kind</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <BooksList books={data.items} author={false} />
-          </table>
+      <BookListLayout isAuthor={false}>
+        {isLoading && (
+          <tr>
+            <td colSpan={4}>Loading...</td>
+          </tr>
         )}
-      </main>
+        {error && (
+          <tr>
+            <td colSpan={4}>Not found...</td>
+          </tr>
+        )}
+        {isSuccess && <BooksList books={data.items} author={false} />}
+      </BookListLayout>
     </>
   );
 }

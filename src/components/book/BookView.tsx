@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../../store/store';
+import { useAppSelector } from '../../store/store';
 
 function BookView() {
   const book = useAppSelector((state) => state.details);
