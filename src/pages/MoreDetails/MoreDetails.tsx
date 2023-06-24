@@ -12,7 +12,7 @@ function MoreDetails() {
     <div>
       <Breadcrumbs />
       <BookView />
-      <h1>more books by this author </h1>
+      <h1>more books with this author </h1>
       {isLoading && <p>Loading...</p>}
       {error && <p>Not found...</p>}
       {isSuccess && (

@@ -13,11 +13,24 @@ function BooksList({ books, author }: Props) {
   return (
     <tbody>
       {books.map((book) => (
-        <tr key={book.id} onClick={() => dispatch(openDetails)}>
+        <tr
+          key={book.id}
+          onClick={() =>
+            dispatch(
+              openDetails({
+                bookId: book.id,
+              })
+            )
+          }
+        >
           <td>{book.volumeInfo.title}</td>
           <td>{book.volumeInfo.authors}</td>
           <td>{book.kind}</td>
-          <td>{book.id && <BooksDetails id={book.id} author={author} />}</td>
+          <td>
+            {book.id && (
+              <BooksDetails id={book.id} author={author} book={book} />
+            )}
+          </td>
         </tr>
       ))}
     </tbody>

@@ -3,6 +3,7 @@ import { Details } from '../../models/Details';
 import { Book } from '../../models/book';
 
 const initialState: Details = {
+  bookId: '' as string,
   book: {} as Book,
   isOpen: false,
 };
@@ -18,9 +19,11 @@ const detailsSlice = createSlice({
         book,
       };
     },
-    openDetails: (state) => {
+    openDetails: (state, action: PayloadAction<{ bookId: string }>) => {
+      const { bookId } = action.payload;
       return {
         ...state,
+        bookId,
         isOpen: !state.isOpen,
       };
     },

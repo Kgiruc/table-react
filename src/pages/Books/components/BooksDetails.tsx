@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../store/store';
 import { detailsBook } from '../../../store/features/detailsSlice';
+import { Book } from '../../../models/book';
 
 interface BooksDetailsProps {
   id: string;
   author: boolean;
+  book: Book;
 }
 
-function BooksDetails({ id, author }: BooksDetailsProps) {
+function BooksDetails({ id, author, book }: BooksDetailsProps) {
   const details = useAppSelector((state) => state.details);
   const dispatch = useAppDispatch();
-  return details.isOpen && id === details.book.id ? (
+  return details.isOpen && id === details.bookId ? (
     <Link
-      to={author ? './' : `./${details.book.volumeInfo.authors}`}
-      onClick={dispatch(detailsBook({ book }))}
+      onClick={() => dispatch(detailsBook({ book }))}
+      to={author ? './' : `./${book.volumeInfo.authors}`}
     >
       More details
     </Link>

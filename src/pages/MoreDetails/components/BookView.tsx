@@ -2,14 +2,17 @@ import { useAppSelector } from '../../../store/store';
 
 function BookView() {
   const book = useAppSelector((state) => state.details);
-  console.log(book);
   return (
     <section>
       <ul>
-        <img
-          src={book.book.volumeInfo.imageLinks.thumbnail}
-          alt={book.book.volumeInfo.title}
-        />
+        {book.book.volumeInfo.imageLinks ? (
+          <img
+            src={book.book.volumeInfo.imageLinks.thumbnail}
+            alt={book.book.volumeInfo.title}
+          />
+        ) : (
+          <p>Brak zdjęcia</p>
+        )}
         <li>{book.book.volumeInfo.authors}</li>
         <li>{book.book.volumeInfo.categories}</li>
         <li>{book.book.volumeInfo.language}</li>
