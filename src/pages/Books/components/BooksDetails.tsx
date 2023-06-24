@@ -7,7 +7,6 @@ interface BooksDetailsProps {
 
 function BooksDetails({ id }: BooksDetailsProps) {
   const details = useAppSelector((state) => state.details);
-  console.log(details.book.volumeInfo);
   return details.isOpen && id === details.book.id ? (
     <ul>
       {details.book.volumeInfo.imageLinks ? (

@@ -1,29 +1,35 @@
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { useBooksQuery } from '../../services/ApiService';
+import { useAppSelector } from '../../store/store';
 import BooksList from './components/BooksList';
 
 function Books() {
-  const { data, error, isLoading, isSuccess } = useBooksQuery('harry potter');
+  const searchBook = useAppSelector((state) => state.search);
+  const { data, error, isLoading, isSuccess } = useBooksQuery(
+    searchBook.search
+  );
   return (
-    <main>
+    <>
       <Breadcrumbs />
-      <h1>Books:</h1>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error</p>}
-      {isSuccess && (
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Authors</th>
-              <th>Kind</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <BooksList books={data.items} />
-        </table>
-      )}
-    </main>
+      <main>
+        <h1>Books:</h1>
+        {isLoading && <p>Loading...</p>}
+        {error && <p>Not found...</p>}
+        {isSuccess && (
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Kind</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <BooksList books={data.items} />
+          </table>
+        )}
+      </main>
+    </>
   );
 }
 
