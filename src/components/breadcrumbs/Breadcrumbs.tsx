@@ -10,15 +10,29 @@ function Breadcrumbs() {
       const linkPath = `/${array.slice(0, index + 1).join('/')}`;
 
       return (
-        <div key={crumb}>
-          <Link to={linkPath}>{decodedCrumb}</Link>
+        <div key={crumb} className="inline">
+          <Link
+            to={linkPath}
+            className="text-blue-500 transition duration-300 hover:text-blue-700"
+          >
+            {decodedCrumb}
+          </Link>
+          {index !== array.length - 1 && (
+            <span className="mx-2 text-gray-500">/</span>
+          )}
         </div>
       );
     });
 
   return (
-    <div>
-      <Link to="/">Home</Link>
+    <div className="ml-4 mt-2 flex items-center text-sm text-gray-500">
+      <Link
+        to="/"
+        className="text-blue-500 transition duration-300 hover:text-blue-700"
+      >
+        Home
+      </Link>
+      <span className="mx-2 text-gray-500">/</span>
       {crumbs}
     </div>
   );

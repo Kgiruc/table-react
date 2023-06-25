@@ -20,6 +20,7 @@ function BooksDetails({ id, author, book }: BooksDetailsProps) {
           ? `../booklist/${book.volumeInfo.authors}`
           : `./${book.volumeInfo.authors}`
       }
+      className="whitespace-nowrap text-blue-500 hover:text-blue-700"
     >
       More details
     </Link>

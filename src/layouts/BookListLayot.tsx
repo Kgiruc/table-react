@@ -7,19 +7,23 @@ interface BookListLayoutProps {
 
 function BookListLayout({ children, isAuthor }: BookListLayoutProps) {
   return (
-    <section>
-      <h1>{isAuthor ? 'Books with this author' : 'Books'}</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Authors</th>
-            <th>Kind</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>{children}</tbody>
-      </table>
+    <section className="p-4">
+      <h1 className=" mb-4 text-center font-belanosima text-2xl sm:text-3xl md:mb-6 md:text-5xl">
+        {isAuthor ? 'Books with this Author:' : 'Books:'}
+      </h1>
+      <div className="overflow-x-auto">
+        <table className="w-full table-auto border-collapse">
+          <thead className="font-belanosima text-lg md:text-2xl">
+            <tr>
+              <th className="border p-2">Title</th>
+              <th className="border p-2">Authors</th>
+              <th className="border p-2">Kind</th>
+              <th className="border p-2">Details</th>
+            </tr>
+          </thead>
+          <tbody>{children}</tbody>
+        </table>
+      </div>
     </section>
   );
 }

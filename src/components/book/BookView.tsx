@@ -2,29 +2,38 @@ import { useAppSelector } from '../../store/store';
 
 function BookView() {
   const book = useAppSelector((state) => state.details);
+
   return (
-    <section>
+    <section className="rounded-lg bg-white p-6 font-jost shadow-lg">
       <ul>
         {book.book.volumeInfo.imageLinks ? (
           <img
             src={book.book.volumeInfo.imageLinks.thumbnail}
             alt={book.book.volumeInfo.title}
+            className="mx-auto h-auto w-40 rounded-md"
           />
         ) : (
-          <p>Brak zdjęcia</p>
+          <p className="text-center text-gray-600">Brak zdjęcia</p>
         )}
-        <li>{book.book.volumeInfo.authors}</li>
-        <li>{book.book.volumeInfo.categories}</li>
-        <li>{book.book.volumeInfo.language}</li>
-        <li>{book.book.volumeInfo.pageCount}</li>
-        <li>{book.book.volumeInfo.publishedDate}</li>
-        <a
-          href={book.book.volumeInfo.infoLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Strona
-        </a>
+        <li className="text-lg font-bold">
+          Author/s: {book.book.volumeInfo.authors}
+        </li>
+        <li className="text-lg">Category: {book.book.volumeInfo.categories}</li>
+        <li className="text-lg">Language: {book.book.volumeInfo.language}</li>
+        <li className="text-lg">Pages: {book.book.volumeInfo.pageCount}</li>
+        <li className="text-lg">
+          Date of published: {book.book.volumeInfo.publishedDate}
+        </li>
+        <li className="text-lg">
+          <a
+            href={book.book.volumeInfo.infoLink}
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-500 underline"
+          >
+            Strona
+          </a>
+        </li>
       </ul>
     </section>
   );

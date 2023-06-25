@@ -1,6 +1,6 @@
 import { Book } from '../../models/book';
 import { openDetails } from '../../store/features/detailsSlice';
-import { useAppDispatch } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '../../store/store';
 import BooksDetails from './BooksDetails';
 
 type Props = {
@@ -10,6 +10,7 @@ type Props = {
 
 function BooksList({ books, author }: Props) {
   const dispatch = useAppDispatch();
+  const details = useAppSelector((state) => state.details);
   return (
     <>
       {books.map((book) => (
@@ -22,11 +23,20 @@ function BooksList({ books, author }: Props) {
               })
             )
           }
+          className={`cursor-pointer border-b-4 border-b-gray-500 font-jost hover:bg-gray-400 ${
+            details.isOpen && details.bookId === book.id ? 'bg-gray-400' : ''
+          }`}
         >
-          <td>{book.volumeInfo.title}</td>
-          <td>{book.volumeInfo.authors}</td>
-          <td>{book.kind}</td>
-          <td>
+          <td className="border-2 px-2 py-1 md:px-4 md:py-2">
+            {book.volumeInfo.title}
+          </td>
+          <td className="border-2 px-2 py-1 md:px-4 md:py-2">
+            {book.volumeInfo.authors}
+          </td>
+          <td className="border-2 px-2 py-1 md:px-4 md:py-2">
+            {book.kind.replace('books', '')}
+          </td>
+          <td className="border-2 px-2 py-1 md:px-4 md:py-2">
             {book.id && (
               <BooksDetails id={book.id} author={author} book={book} />
             )}
