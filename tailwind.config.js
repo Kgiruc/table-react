@@ -2,7 +2,12 @@
 export default {
   content: ['./src/**/*.{html,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        belanosima: ['Belanosima', 'sans-serif'],
+        jost: ['Jost', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
