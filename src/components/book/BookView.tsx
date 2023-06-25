@@ -16,6 +16,9 @@ function BookView() {
           <p className="text-center text-gray-600">Brak zdjęcia</p>
         )}
         <li className="text-lg font-bold">
+          Title: {book.book.volumeInfo.title}
+        </li>
+        <li className="text-lg font-bold">
           Author/s: {book.book.volumeInfo.authors}
         </li>
         <li className="text-lg">Category: {book.book.volumeInfo.categories}</li>

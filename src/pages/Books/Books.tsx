@@ -1,4 +1,4 @@
-import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '../../components/breadcrumbs/BreadCrumbs';
 import BookListLayout from '../../layouts/BookListLayot';
 import { useBooksQuery } from '../../services/ApiService';
 import { useAppSelector } from '../../store/store';
@@ -16,12 +16,23 @@ function Books() {
       <BookListLayout isAuthor={false}>
         {isLoading && (
           <tr>
-            <td colSpan={4}>Loading...</td>
+            <td colSpan={4} className="py-8 text-center">
+              <img
+                src="src/assets/gifs/loading.gif"
+                alt="loading"
+                className="mx-auto"
+              />
+            </td>
           </tr>
         )}
         {error && (
           <tr>
-            <td colSpan={4}>Not found...</td>
+            <td
+              colSpan={4}
+              className="py-14 text-center font-belanosima text-4xl"
+            >
+              Not found...
+            </td>
           </tr>
         )}
         {isSuccess && <BooksList books={data.items} author={false} />}
