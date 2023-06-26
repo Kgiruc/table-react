@@ -61,29 +61,30 @@ Ta komenda wykona testy jednostkowe i integracyjne, aby zapewnić poprawne dzia�
 
 Podczas tworzenia projektu podjęto następujące decyzje projektowe:
 
--Wybrano framework React.js wraz z Typescript ze względu na jego popularność, elastyczność i rozbudowaną społeczność.
+- Wybrano framework React.js wraz z Typescript ze względu na jego popularność, elastyczność i rozbudowaną społeczność.
 
--Wykorzystano API Google Books do pobierania danych autorów i ich książek ze względu na jego bogatą kolekcję danych książkowych.
+- Wykorzystano API Google Books do pobierania danych autorów i ich książek ze względu na jego bogatą kolekcję danych książkowych.
 
--Wybrano bibliotekę Redux Toolkit jako rozwiązanie do zarządzania stanem aplikacji, ze względu na jej uproszczoną składnię, wbudowane narzędzia do zarządzania akcjami, reduktorami i stanem, oraz optymalizacje wydajnościowe.
+- Wybrano bibliotekę Redux Toolkit jako rozwiązanie do zarządzania stanem aplikacji, ze względu na jej uproszczoną składnię, wbudowane narzędzia do zarządzania akcjami, reduktorami i stanem, oraz optymalizacje wydajnościowe.
 
--Zaimplementowano RTK Query jako rozwiązanie do zarządzania pobieraniem danych z API, które jest częścią Redux Toolkit. RTK Query umożliwia deklaratywne zapytania do API, automatyczne obsługę buforowania danych, odświeżanie danych w tle, i wiele innych zaawansowanych funkcji.Dodatkowo, zdecydowano się na użycie Redux Toolkit i RTK Query ze względu na ich silną integrację i synergiczną współpracę, co ułatwia zarządzanie stanem i pobieranie danych w aplikacji.
+- Zaimplementowano RTK Query jako rozwiązanie do zarządzania pobieraniem danych z API, które jest częścią Redux Toolkit. RTK Query umożliwia deklaratywne zapytania do API, automatyczne obsługę buforowania danych, odświeżanie danych w tle, i wiele innych zaawansowanych funkcji.Dodatkowo, zdecydowano się na użycie Redux Toolkit i RTK Query ze względu na ich silną integrację i synergiczną współpracę, co ułatwia zarządzanie stanem i pobieranie danych w aplikacji.
 
--Zastosowano bibliotekę Tailwind CSS do szybkiego i skutecznego stylizowania komponentów aplikacji.
+- Zastosowano bibliotekę Tailwind CSS do szybkiego i skutecznego stylizowania komponentów aplikacji.
 
--Wykorzystano bibliotekę React Router do obsługi nawigacji i implementacji breadcrumbów.
+- Wykorzystano bibliotekę React Router do obsługi nawigacji i implementacji breadcrumbów.
 
--Do testowania aplikacji wykorzystano bibliotekę Testing Library ze względu na jej łatwość użycia, wsparcie dla testów jednostkowych i integracyjnych oraz szeroką społeczność.
+- Do testowania aplikacji wykorzystano bibliotekę Testing Library ze względu na jej łatwość użycia, wsparcie dla testów jednostkowych i integracyjnych oraz szeroką społeczność.
 
--Zaimplementowano testy za pomocą biblioteki Vite+Test, która integruje Testing Library z frameworkiem Vite, umożliwiając wygodne i efektywne testowanie komponentów.
+- Zaimplementowano testy za pomocą biblioteki Vite+Test, która integruje Testing Library z frameworkiem Vite, umożliwiając wygodne i efektywne testowanie komponentów.
 
 ## Planowane rozszczenia
 
 W przyszłości planuję dodać kilka rozszerzeń do tej aplikacji, takich jak:
 
--Możliwość dodawania nowych autorów i książek za pośrednictwem formularza.
--Implementacja sortowania i filtrowania danych w tabeli.
--Dodanie funkcji paginacji dla większych zbiorów danych.
--Udoskonalenie responsywności aplikacji, aby lepiej działała na urządzeniach mobilnych.
+- Implementacja sortowania i filtrowania danych w tabeli.
+- Dodanie funkcji paginacji dla większych zbiorów danych.
+- Udoskonalenie responsywności aplikacji, aby lepiej działała na urządzeniach mobilnych.
+- Udoskonalenie testów jednostkowych by bardziej zrozumieć jak się testuje rtk query i redux toolkit.
+- Udoskonalenie struktury plików, bo wiele nad tym rozmyślałem.
 
 Cieszę się, że miałem okazję pracować nad tym projektem, i jestem otwarty na wszelkie sugestie i wkład, który może przyczynić się do dalszego rozwoju aplikacji.
