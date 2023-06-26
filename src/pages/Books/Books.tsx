@@ -17,11 +17,7 @@ function Books() {
         {isLoading && (
           <tr>
             <td colSpan={4} className="py-8 text-center">
-              <img
-                src="src/assets/gifs/loading.gif"
-                alt="loading"
-                className="mx-auto"
-              />
+              <img src="/gifs/loading.gif" alt="loading" className="mx-auto" />
             </td>
           </tr>
         )}

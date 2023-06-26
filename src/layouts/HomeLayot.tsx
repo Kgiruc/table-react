@@ -15,11 +15,7 @@ function HomeLayout({ children }: HomeLayoutProps) {
         {children}
       </section>
       <aside className="flex h-1/2 w-full flex-grow items-center justify-center md:h-full">
-        <img
-          src="src\assets\books.jpg"
-          alt="Zdjęcie"
-          className="h-full w-full"
-        />
+        <img src=".\books.jpg" alt="Zdjęcie" className="h-full w-full" />
       </aside>
     </main>
   );
