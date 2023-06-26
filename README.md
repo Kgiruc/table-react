@@ -26,15 +26,15 @@ Aby skonfigurować aplikację React.js Dynamic Table, wykonaj następujące krok
 
 1. Sklonuj repozytorium:
 
-git clone https://github.com/Kgiruc/table-react
+    git clone https://github.com/Kgiruc/table-react
 
 2. Przejdź do katalogu projektu:
 
-cd table-react
+    cd table-react
 
 3. Zainstaluj wymagane zależności:
 
-npm install
+    npm install
 
 4. Dodaj plik .env 
 
