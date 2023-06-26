@@ -26,7 +26,7 @@ Aby skonfigurować aplikację React.js Dynamic Table, wykonaj następujące krok
 
 1. Sklonuj repozytorium:
 
-git clone https://github.com/Kgiruc/ts-react
+git clone https://github.com/Kgiruc/table-react
 
 2. Przejdź do katalogu projektu:
 
@@ -38,8 +38,8 @@ npm install
 
 4. Dodaj plik .env 
 
-VITE_KEY = twoj osobisty klucz dostepu do strony
-VITE_BASE_URL = https://www.googleapis.com/books/v1
+- VITE_KEY = twoj osobisty klucz dostepu do strony
+- VITE_BASE_URL = https://www.googleapis.com/books/v1
 
 ## Użycie
 
@@ -67,7 +67,7 @@ Podczas tworzenia projektu podjęto następujące decyzje projektowe:
 
 -Wybrano bibliotekę Redux Toolkit jako rozwiązanie do zarządzania stanem aplikacji, ze względu na jej uproszczoną składnię, wbudowane narzędzia do zarządzania akcjami, reduktorami i stanem, oraz optymalizacje wydajnościowe.
 
--Zaimplementowano RTK Query jako rozwiązanie do zarządzania pobieraniem danych z API, które jest częścią Redux Toolkit. RTK Query umożliwia deklaratywne zapytania do API, automatyczne obsługę buforowania danych, odświeżanie danych w tle, i wiele innych zaawansowanych funkcji.
+-Zaimplementowano RTK Query jako rozwiązanie do zarządzania pobieraniem danych z API, które jest częścią Redux Toolkit. RTK Query umożliwia deklaratywne zapytania do API, automatyczne obsługę buforowania danych, odświeżanie danych w tle, i wiele innych zaawansowanych funkcji.Dodatkowo, zdecydowano się na użycie Redux Toolkit i RTK Query ze względu na ich silną integrację i synergiczną współpracę, co ułatwia zarządzanie stanem i pobieranie danych w aplikacji.
 
 -Zastosowano bibliotekę Tailwind CSS do szybkiego i skutecznego stylizowania komponentów aplikacji.
 
