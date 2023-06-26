@@ -26,7 +26,7 @@ Aby skonfigurować aplikację React.js Dynamic Table, wykonaj następujące krok
 
 1. Sklonuj repozytorium:
 
-git clone https://github.com/twoje-repozytorium.git
+git clone https://github.com/Kgiruc/ts-react
 
 2. Przejdź do katalogu projektu:
 
@@ -65,6 +65,10 @@ Podczas tworzenia projektu podjęto następujące decyzje projektowe:
 
 -Wykorzystano API Google Books do pobierania danych autorów i ich książek ze względu na jego bogatą kolekcję danych książkowych.
 
+-Wybrano bibliotekę Redux Toolkit jako rozwiązanie do zarządzania stanem aplikacji, ze względu na jej uproszczoną składnię, wbudowane narzędzia do zarządzania akcjami, reduktorami i stanem, oraz optymalizacje wydajnościowe.
+
+-Zaimplementowano RTK Query jako rozwiązanie do zarządzania pobieraniem danych z API, które jest częścią Redux Toolkit. RTK Query umożliwia deklaratywne zapytania do API, automatyczne obsługę buforowania danych, odświeżanie danych w tle, i wiele innych zaawansowanych funkcji.
+
 -Zastosowano bibliotekę Tailwind CSS do szybkiego i skutecznego stylizowania komponentów aplikacji.
 
 -Wykorzystano bibliotekę React Router do obsługi nawigacji i implementacji breadcrumbów.
@@ -77,8 +81,9 @@ Podczas tworzenia projektu podjęto następujące decyzje projektowe:
 
 W przyszłości planuję dodać kilka rozszerzeń do tej aplikacji, takich jak:
 
-Możliwość dodawania nowych autorów i książek za pośrednictwem formularza.
-Implementacja sortowania i filtrowania danych w tabeli.
-Dodanie funkcji paginacji dla większych zbiorów danych.
-Udoskonalenie responsywności aplikacji, aby lepiej działała na urządzeniach mobilnych.
+-Możliwość dodawania nowych autorów i książek za pośrednictwem formularza.
+-Implementacja sortowania i filtrowania danych w tabeli.
+-Dodanie funkcji paginacji dla większych zbiorów danych.
+-Udoskonalenie responsywności aplikacji, aby lepiej działała na urządzeniach mobilnych.
+
 Cieszę się, że miałem okazję pracować nad tym projektem, i jestem otwarty na wszelkie sugestie i wkład, który może przyczynić się do dalszego rozwoju aplikacji.
