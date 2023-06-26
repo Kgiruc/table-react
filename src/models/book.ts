@@ -2,7 +2,6 @@ export interface Book {
   id: string;
   kind: string;
   volumeInfo: {
-    kind: string;
     title: string;
     authors: string[];
     categories: string[];
